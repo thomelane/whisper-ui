@@ -20,11 +20,11 @@ ls ./data
 bash ./build.sh medium.en
 ```
 
-A larger model typically gives better transcription accuracy, but it will take more storage/momory and take longer to transcribe. Option are `tiny.en`, `small.en`, `medium.en`, `large.en`: and default was set to `small.en`.
+A larger model typically gives better transcription accuracy, but it will take more storage/memory and take longer to transcribe. Option are `tiny.en`, `small.en`, `medium.en`, `large.en`: and default was set to `small.en`.
 
 #### Give a text prompt
 
-When transcribing audio, it's sometimes benificial to give the model more context about the audio it's listening to. With `data/example.mp4` as an example, you can give the model a text prompt like so:
+When transcribing audio, it's sometimes beneficial to give the model more context about the audio it's listening to. With `data/example.mp4` as an example, you can give the model a text prompt like so:
 
 ```bash
 bash ./transcribe.sh ./data/example.mp4 --text-prompt "A YouTube video about OpenAI's new model: "

@@ -6,7 +6,7 @@ Docker
 
 ## Usage
 
-bash```
+```bash
 bash ./build.sh
 bash ./transcribe ./data/example.mp4
 ls ./data
@@ -16,7 +16,7 @@ ls ./data
 
 #### Change the model size
 
-```
+```bash
 bash ./build.sh medium.en
 ```
 
@@ -26,7 +26,7 @@ A larger model typically gives better transcription accuracy, but it will take m
 
 When transcribing audio, it's sometimes benificial to give the model more context about the audio it's listening to. With `data/example.mp4` as an example, you can give the model a text prompt like so:
 
-```
+```bash
 bash ./transcribe.sh ./data/example.mp4 --text-prompt "A YouTube video about OpenAI's new model: "
 ```
 
@@ -41,7 +41,7 @@ So the model is more likely to transcribe "OpenAI" instead of "Open a eye".
 
 ### Sampling 30 seconds of a random YouTube video
 
-bash```
+```bash
 apt-get -qq update
 apt-get -qq install curl
 curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp

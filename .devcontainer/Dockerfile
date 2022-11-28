@@ -1,0 +1,1 @@
+FROM thomelane/whisper-ui:devcontainer

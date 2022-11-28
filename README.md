@@ -2,35 +2,26 @@
 
 ## Pre-requisites
 
-Docker
+* Docker
+* Earthly
 
 ## Usage
 
 ```bash
-bash ./build.sh
-bash ./transcribe ./data/example.mp4
-ls ./data
+earthly +run
+# or equivalently
+docker run -d -p 8501:8501 -v `pwd`/models:/app/models thomelane/whisper-ui:latest
 ```
 
-### Options
+## Development
 
-#### Change the model size
-
-```bash
-bash ./build.sh medium.en
+```
+earthly +dev-env
+# Open VS Code with 'Rebuild and Reopen in Container'
 ```
 
-A larger model typically gives better transcription accuracy, but it will take more storage/memory and take longer to transcribe. Option are `tiny.en`, `small.en`, `medium.en`, `large.en`: and default was set to `small.en`.
-
-#### Give a text prompt
-
-When transcribing audio, it's sometimes beneficial to give the model more context about the audio it's listening to. With `data/example.mp4` as an example, you can give the model a text prompt like so:
-
-```bash
-bash ./transcribe.sh ./data/example.mp4 --text-prompt "A YouTube video about OpenAI's new model: "
-```
-
-So the model is more likely to transcribe "OpenAI" instead of "Open a eye".
+🛑 'Rebuild' from VS Code doesn't rebuild the image, it just makes sure the *latest* image is being used.
+Use `earthly +dev-env` to actually rebuild the container. Can even be called from inside the dev container!
 
 ## References
 

@@ -23,7 +23,7 @@ build:
     COPY ./whisper ./whisper
     RUN --mount=type=cache,target=/root/.cache/pip pip install --verbose --requirement requirements.txt
     COPY app.py .
-    COPY .streamlit/ .
+    COPY ./.streamlit ./.streamlit
     EXPOSE 8501
     ENTRYPOINT ["streamlit", "run", "app.py"]
     SAVE IMAGE --push thomelane/whisper-ui:latest

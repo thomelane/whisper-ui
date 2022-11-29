@@ -5,6 +5,14 @@
 * Docker
 * Earthly
 
+## Clone
+
+```bash
+https://github.com/thomelane/whisper-ui.git
+cd whisper-ui
+git submodule update --init --recursive
+```
+
 ## Usage
 
 ```bash

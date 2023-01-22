@@ -31,6 +31,10 @@ earthly +dev-env
 🛑 'Rebuild' from VS Code doesn't rebuild the image, it just makes sure the *latest* image is being used.
 Use `earthly +dev-env` to actually rebuild the container. Can even be called from inside the dev container!
 
+```
+earthly +dev-run
+```
+
 ## References
 
 * Official implementation found at https://github.com/openai/whisper
